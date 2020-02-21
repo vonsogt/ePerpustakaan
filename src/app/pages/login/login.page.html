@@ -1,0 +1,24 @@
+<ion-header no-border>
+  <ion-toolbar color="success">
+    <ion-title>Masuk | ePerpustakaan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <div>
+      <ion-item>
+        <ion-input type="text" placeholder="Email" [(ngModel)]="email_address"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+      <ion-button expand="full" class="ion-padding" color="success" (click)="tryLogin()">Masuk</ion-button>
+    </div>
+
+    <p class="ion-padding info-1">
+      Aplikasi ePerpustakaan.<br />
+      Jika belum mempunyai akun, klik <span (click)="openRegister()">daftar sekarang</span>
+    </p>
+  </ion-list>
+</ion-content>
