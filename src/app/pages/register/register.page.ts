@@ -11,9 +11,9 @@ import { AccessProviders } from '../../providers/access-providers';
 export class RegisterPage implements OnInit {
 
   name: string = "";
-  email_address: string = "";
+  email: string = "";
   password: string = "";
-  confirm_pass: string = "";
+  c_password: string = "";
 
   disableButton: boolean;
 
@@ -35,11 +35,11 @@ export class RegisterPage implements OnInit {
   async tryRegister() {
     if (this.name == "") {
       this.presentToast('Nama harus diisi.')
-    } else if (this.email_address == "") {
+    } else if (this.email == "") {
       this.presentToast('Email harus diisi.')
     } else if (this.password == "") {
       this.presentToast('Password harus diisi.')
-    } else if (this.confirm_pass == "") {
+    } else if (this.c_password == "") {
       this.presentToast('Password tidak sama.')
     } else {
       this.disableButton = true;
@@ -52,11 +52,12 @@ export class RegisterPage implements OnInit {
         let body = {
           action: 'process_register',
           name: this.name,
-          email_address: this.email_address,
-          password: this.password
+          email: this.email,
+          password: this.password,
+          c_password: this.c_password
         }
 
-        this.accsPrvds.postData(body, 'process_api.php').subscribe((res: any) => {
+        this.accsPrvds.postData(body, 'api/register').subscribe((res: any) => {
           if (res.success == true) {
             loader.dismiss();
             this.disableButton = false;

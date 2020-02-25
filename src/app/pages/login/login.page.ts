@@ -12,7 +12,7 @@ import { Storage } from '@ionic/storage';
 })
 export class LoginPage implements OnInit {
 
-  email_address: string = "";
+  email: string = "";
   password: string = "";
 
   disableButton: boolean;
@@ -35,7 +35,7 @@ export class LoginPage implements OnInit {
   }
 
   async tryLogin() {
-    if (this.email_address == "") {
+    if (this.email == "") {
       this.presentToast('Email harus diisi.')
     } else if (this.password == "") {
       this.presentToast('Password harus diisi.')
@@ -49,11 +49,12 @@ export class LoginPage implements OnInit {
       return new Promise(resolve => {
         let body = {
           action: 'process_login',
-          email_address: this.email_address,
+          email: this.email,
           password: this.password
         }
 
-        this.accsPrvds.postData(body, 'process_api.php').subscribe((res: any) => {
+        // this.accsPrvds.postData(body, 'process_api.php').subscribe((res: any) => {
+        this.accsPrvds.postData(body, 'api/login').subscribe((res: any) => {
           if (res.success == true) {
             loader.dismiss();
             this.disableButton = false;
@@ -68,7 +69,8 @@ export class LoginPage implements OnInit {
         }, (err) => {
           loader.dismiss();
           this.disableButton = false;
-          this.presentToast('Timeout');
+          // this.presentToast('Timeout');
+          this.presentToast('Email atau password salah');
         });
       });
     }
