@@ -5,6 +5,7 @@ import { AccessProviders } from '../../providers/access-providers';
 import { Storage } from '@ionic/storage';
 
 @Component({
+  template: `{{ now }}`,
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
@@ -13,6 +14,8 @@ export class HomePage implements OnInit {
 
   dataStorage: any;
   name: string;
+  public now: any = new Date().toLocaleTimeString();
+  greeting: string = "Salam, ";
 
   constructor(
     private router: Router,
@@ -31,10 +34,22 @@ export class HomePage implements OnInit {
   }
 
   ionViewDidEnter() {
+    if (this.now < '4:00:00 AM') {
+      this.greeting = 'Malam, ';
+    } else if (this.now < '11:00:00 AM') {
+      this.greeting = 'Pagi, ';
+    } else if (this.now < '4:00:00 PM') {
+      this.greeting = 'Siang, ';
+    } else if (this.now < '8:00:00 PM') {
+      this.greeting = 'Sore, ';
+    } else {
+      this.greeting = 'Malam, ';
+    }
     this.storage.get('storage_xxx').then((res) => {
       console.log(res);
       this.dataStorage = res;
       this.name = this.dataStorage.name;
+      this.dataStorage.greeting = this.greeting;
     });
   }
 

@@ -7,12 +7,12 @@ import { Storage } from '@ionic/storage';
 import { ToastController, NavController } from '@ionic/angular';
 
 
-
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
+
 export class AppComponent {
 
   public selectedIndex = 0;

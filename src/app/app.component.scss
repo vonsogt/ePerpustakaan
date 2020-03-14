@@ -123,3 +123,8 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+ion-list-header {
+  display: block;
+  text-align: center;
+}
