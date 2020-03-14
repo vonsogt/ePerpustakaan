@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ToastController, LoadingController, AlertController, NavController } from '@ionic/angular';
+import { MenuController, ToastController, LoadingController, AlertController, NavController } from '@ionic/angular';
 import { AccessProviders } from '../../providers/access-providers';
 import { Storage } from '@ionic/storage';
 
@@ -24,8 +24,11 @@ export class LoginPage implements OnInit {
     private alertCtrl: AlertController,
     private accsPrvds: AccessProviders,
     private storage: Storage,
-    public navCtrl: NavController
-  ) { }
+    public navCtrl: NavController,
+    public menuCtrl: MenuController
+  ) {
+    this.menuCtrl.enable(false);
+  }
 
   ngOnInit() {
   }

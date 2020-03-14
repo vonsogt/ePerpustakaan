@@ -4,7 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Storage } from '@ionic/storage';
-import { NavController } from '@ionic/angular';
+import { ToastController, NavController } from '@ionic/angular';
 
 
 
@@ -14,12 +14,38 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+
+  public selectedIndex = 0;
+  public appPages = [
+    {
+      title: 'Beranda',
+      url: '/home',
+      icon: 'home'
+    },
+    {
+      title: 'Daftar Buku',
+      url: '/list-buku',
+      icon: 'book'
+    },
+    {
+      title: 'Aktivitas',
+      url: '/Aktivitas',
+      icon: 'receipt'
+    },
+    {
+      title: 'Tentang',
+      url: '/folder/Tentang',
+      icon: 'information-circle'
+    },
+  ];
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private storage: Storage,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private toastCtrl: ToastController,
   ) {
     this.initializeApp();
   }
@@ -37,6 +63,24 @@ export class AppComponent {
         this.navCtrl.navigateRoot('/home');
       }
     });
-
   }
+
+  ngOnInit() {
+    const path = window.location.pathname.split('folder/')[1];
+    if (path !== undefined) {
+      this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
+    }
+  }
+
+  async processLogout() {
+    this.storage.clear();
+    this.navCtrl.navigateRoot(['/intro']);
+    const toast = await this.toastCtrl.create({
+      message: 'Berhasil keluar',
+      duration: 1500
+    });
+
+    toast.present();
+  }
+
 }

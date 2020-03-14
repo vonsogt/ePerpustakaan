@@ -7,7 +7,7 @@ import 'rxjs/add/operator/timeout';
 export class AccessProviders {
     // url backend api json
     // server: string = 'http://localhost/api-ePerpustakaan/';
-    server: string = 'http://localhost:8002/';
+    server: string = 'http://localhost:8000/';
 
     constructor(
         public http: HttpClient,
