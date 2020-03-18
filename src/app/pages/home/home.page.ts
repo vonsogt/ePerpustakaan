@@ -34,9 +34,7 @@ export class HomePage implements OnInit {
   }
 
   ionViewDidEnter() {
-    if (this.now < '4:00:00 AM') {
-      this.greeting = 'Malam, ';
-    } else if (this.now < '11:00:00 AM') {
+    if (this.now < '11:00:00 AM') {
       this.greeting = 'Pagi, ';
     } else if (this.now < '4:00:00 PM') {
       this.greeting = 'Siang, ';
