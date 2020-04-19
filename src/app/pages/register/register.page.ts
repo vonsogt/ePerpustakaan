@@ -50,14 +50,14 @@ export class RegisterPage implements OnInit {
 
       return new Promise(resolve => {
         let body = {
-          action: 'process_register',
+          // action: 'process_register',
           name: this.name,
           email: this.email,
           password: this.password,
           c_password: this.c_password
         }
 
-        this.accsPrvds.postData(body, 'api/register').subscribe((res: any) => {
+        this.accsPrvds.postData(body, 'api/client/register').subscribe((res: any) => {
           if (res.success == true) {
             loader.dismiss();
             this.disableButton = false;
@@ -71,7 +71,7 @@ export class RegisterPage implements OnInit {
         }, (err) => {
           loader.dismiss();
           this.disableButton = false;
-          this.presentAlert('Timeout');
+          this.presentAlert('Timeout/Unauthorized');
         });
       });
     }

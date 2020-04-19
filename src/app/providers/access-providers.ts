@@ -15,7 +15,11 @@ export class AccessProviders {
 
     postData(body: any, file: any) {
         let headers = new HttpHeaders({
-            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': 'true',
+            'Access-Control-Allow-Methods': 'PUT, GET, POST, DELETE, OPTIONS',
+            'Access-Control-Allow-Headers': 'Origin, Content-Type, Authorization, Accept, X-Requested-With, x-xsrf-token',
+            'Content-Type': 'application/json; charset=utf-8',
         });
         let options = {
             headers: headers

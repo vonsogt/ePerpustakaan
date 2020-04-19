@@ -51,13 +51,13 @@ export class LoginPage implements OnInit {
 
       return new Promise(resolve => {
         let body = {
-          action: 'process_login',
+          // action: 'process_login',
           email: this.email,
           password: this.password
         }
 
         // this.accsPrvds.postData(body, 'process_api.php').subscribe((res: any) => {
-        this.accsPrvds.postData(body, 'api/login').subscribe((res: any) => {
+        this.accsPrvds.postData(body, 'api/client/login').subscribe((res: any) => {
           if (res.success == true) {
             loader.dismiss();
             this.disableButton = false;
