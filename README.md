@@ -18,4 +18,4 @@ Jika Anda menemukan kerentanan keamanan dalam ePerpustakaan-admin ini, silakan k
 
 ## Lisensi
 
-ePerpustakaan-Admin ini adalah open source website dibawah [MIT license](https://opensource.org/licenses/MIT).
+ePerpustakaan ini adalah open source website dibawah [MIT license](https://opensource.org/licenses/MIT).
