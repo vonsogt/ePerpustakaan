@@ -72,8 +72,7 @@ export class LoginPage implements OnInit {
         }, (err) => {
           loader.dismiss();
           this.disableButton = false;
-          // this.presentToast('Timeout');
-          this.presentToast('Email atau password salah');
+          this.presentToast('Timeout');
         });
       });
     }

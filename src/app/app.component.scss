@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Varela+Round&display=swap");
+
 ion-menu {
   ion-content {
     --background: var(--ion-item-background, var(--ion-background-color, #fff));
@@ -127,4 +129,85 @@ ion-item.selected {
 ion-list-header {
   display: block;
   text-align: center;
+}
+
+.header {
+  padding: 1rem;
+  padding-top: calc(var(--ion-safe-area-top) + 1.5rem);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  padding-left: 0.5rem;
+  color: white;
+}
+
+.logo img {
+  width: 80%;
+}
+
+.nav {
+  display: flex;
+  flex-grow: 5;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.nav-item {
+  padding: 0.75rem 0.5rem 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.nav-item span.divider {
+  padding-top: 0.75rem;
+  width: 100%;
+  display: block;
+  border-bottom: solid 1px rgba(34, 34, 34, 0.18);
+}
+
+.icon {
+  margin-right: 0.5rem;
+}
+
+.nav-item:hover,
+.nav-item:active {
+  background: rgba(var(34, 34, 34), 0.1);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.footer-nav {
+  padding: 0.5rem;
+}
+
+.footer-nav ul {
+  width: 100%;
+  padding: 0;
+  text-align: center;
+
+  li {
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.footer-app-version {
+  padding: 0.3rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: white;
 }

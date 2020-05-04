@@ -3,10 +3,21 @@
     <ion-buttons slot="start">
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ greeting }}{{ name }}</ion-title>
+    <ion-title>ePerpustakaan</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <ion-item>
+      <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+      <ion-button fill="outline" slot="end">Ubah</ion-button>
+    </ion-item>
+  
+    <img class="profile-photo" [src]="profilePicture" />
+    <ion-card-header>
+      <ion-card-subtitle class="profile-greeting">Selamat {{ greeting }}</ion-card-subtitle>
+      <ion-card-title class="profile-name">{{ name }}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
 </ion-content>

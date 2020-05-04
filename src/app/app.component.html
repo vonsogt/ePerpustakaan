@@ -23,6 +23,18 @@
           </ion-item>
         </ion-list>
       </ion-content>
+      <div class="footer">
+        <div class="footer-social">
+          <ion-icon (click)="openInstagramProfile()" name="logo-instagram"></ion-icon>
+          <ion-icon (click)="openFacebookProfile()" name="logo-facebook"></ion-icon>
+          <ion-icon (click)="openTwitterProfile()" name="logo-twitter"></ion-icon>
+          <ion-icon (click)="openWebsite()" name="globe"></ion-icon>
+        </div>
+
+        <div class="footer-app-version">
+          v{{version}}
+        </div>
+      </div>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>

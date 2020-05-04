@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ToastController, LoadingController, AlertController, NavController, MenuController } from '@ionic/angular';
 import { AccessProviders } from '../../providers/access-providers';
 import { Storage } from '@ionic/storage';
+import { Md5 } from 'ts-md5';
 
 @Component({
   template: `{{ now }}`,
@@ -15,7 +16,8 @@ export class HomePage implements OnInit {
   dataStorage: any;
   name: string;
   public now: any = new Date().toLocaleTimeString();
-  greeting: string = "Salam, ";
+  greeting: string = "Bersemangat";
+  profilePicture: any = "https://www.gravatar.com/avatar/" + Md5.hashStr('vonsogt18081999@gmail.com');;
 
   constructor(
     private router: Router,
@@ -35,18 +37,18 @@ export class HomePage implements OnInit {
 
   ionViewDidEnter() {
     if (this.now < '11:00:00 AM') {
-      this.greeting = 'Pagi, ';
+      this.greeting = 'Pagi ';
     } else if (this.now < '4:00:00 PM') {
-      this.greeting = 'Siang, ';
+      this.greeting = 'Siang ';
     } else if (this.now < '8:00:00 PM') {
-      this.greeting = 'Sore, ';
+      this.greeting = 'Sore ';
     } else {
-      this.greeting = 'Malam, ';
+      this.greeting = 'Malam ';
     }
     this.storage.get('storage_xxx').then((res) => {
-      console.log(res);
+      // console.log(res);
       this.dataStorage = res;
-      this.name = this.dataStorage.name;
+      this.name = this.dataStorage.first_name + ' ' + this.dataStorage.last_name;
       this.dataStorage.greeting = this.greeting;
     });
   }

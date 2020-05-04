@@ -16,6 +16,7 @@ import { ToastController, NavController } from '@ionic/angular';
 export class AppComponent {
 
   public selectedIndex = 0;
+  version: string = "Beta";
   public appPages = [
     {
       title: 'Beranda',
@@ -82,5 +83,13 @@ export class AppComponent {
 
     toast.present();
   }
+
+  openFacebookProfile() { }
+
+  openInstagramProfile() { }
+
+  openTwitterProfile() { }
+
+  openWebsite() { }
 
 }
