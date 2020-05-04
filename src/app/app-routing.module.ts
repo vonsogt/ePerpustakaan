@@ -26,7 +26,12 @@ const routes: Routes = [
   {
     path: 'crud',
     loadChildren: () => import('./pages/crud/crud.module').then(m => m.CrudPageModule)
+  },
+  {
+    path: 'profile/update',
+    loadChildren: () => import('./pages/profile/update/update.module').then( m => m.UpdatePageModule)
   }
+
 ];
 
 @NgModule({

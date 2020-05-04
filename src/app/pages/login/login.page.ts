@@ -63,6 +63,7 @@ export class LoginPage implements OnInit {
             this.disableButton = false;
             this.presentToast('Login berhasil');
             this.storage.set('storage_xxx', res.result); // create storage session
+            this.storage.set('client_info', res.client_info);
             this.navCtrl.navigateRoot(['/home']);
           } else {
             loader.dismiss();

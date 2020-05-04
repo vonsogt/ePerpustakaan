@@ -1,0 +1,67 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ubah Profil | ePerpustakaan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="12" size-sm="10" offset-sm="1" size-md="8" offset-md="2" size-lg="6" offset-lg="3" size-xl="4"
+      offset-xl="4">
+      <ion-card>
+        <ion-card-content>
+          <ion-item lines="none">
+            <ion-label position="floating">Nama Depan</ion-label>
+            <ion-input type="text" clearInput name="first_name" [(ngModel)]="first_name"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-label position="floating">Nama Belakang</ion-label>
+            <ion-input type="text" clearInput name="last_name" [(ngModel)]="last_name"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-label position="floating">Identitas (NIM/KTP/Passport)</ion-label>
+            <ion-input type="text" clearInput name="identity" [(ngModel)]="identity"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" clearInput name="email" [(ngModel)]="email"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-label position="floating">Nomor Hp</ion-label>
+            <ion-input type="text" clearInput name="phone" [(ngModel)]="phone"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-text color="danger">
+              <h6>Biarkan kolom kata sandi kosong jika tidak ingin mengubah kata sandi.</h6>
+            </ion-text>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-input placeholder="Kata Sandi Lama" [type]="showOldPassword ? 'text' : 'password'" name="old_password"
+              [(ngModel)]="old_password">
+            </ion-input>
+            <ion-icon slot="end" [name]="oldPasswordToggleIcon" (click)="togglePassword('old')"></ion-icon>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-input placeholder="Kata Sandi Baru" [type]="showNewPassword ? 'text' : 'password'" name="new_password"
+              [(ngModel)]="new_password">
+            </ion-input>
+            <ion-icon slot="end" [name]="newPasswordToggleIcon" (click)="togglePassword('new')"></ion-icon>
+          </ion-item>
+
+          <ion-button (click)="updateProfile()" expand="block">Simpan</ion-button>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-col>
+  </ion-row>
+</ion-content>

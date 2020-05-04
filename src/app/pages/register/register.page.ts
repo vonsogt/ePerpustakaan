@@ -48,7 +48,7 @@ export class RegisterPage implements OnInit {
       this.presentToast('Nomor hp harus diisi.')
     } else if (this.password == "") {
       this.presentToast('Password harus diisi.')
-    } else if (this.c_password == "") {
+    } else if (this.c_password != this.password) {
       this.presentToast('Password tidak sama.')
     } else {
       this.disableButton = true;

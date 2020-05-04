@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
-    <ion-title>ePerpustakaan</ion-title>
+    <ion-title>Dasbor | ePerpustakaan</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,7 +11,7 @@
   <ion-card>
     <ion-item>
       <ion-icon name="person-circle-outline" slot="start"></ion-icon>
-      <ion-button fill="outline" slot="end">Ubah</ion-button>
+      <ion-button fill="outline" routerLink="/profile/update" slot="end">Ubah</ion-button>
     </ion-item>
   
     <img class="profile-photo" [src]="profilePicture" />

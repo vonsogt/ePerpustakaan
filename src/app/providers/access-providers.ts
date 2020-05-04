@@ -29,4 +29,21 @@ export class AccessProviders {
             .timeout(59000) // 59 Detik timeout
             .map(res => res);
     }
+
+    putData(body: any, file: any) {
+        let headers = new HttpHeaders({
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': 'true',
+            'Access-Control-Allow-Methods': 'PUT, GET, POST, DELETE, OPTIONS',
+            'Access-Control-Allow-Headers': 'Origin, Content-Type, Authorization, Accept, X-Requested-With, x-xsrf-token',
+            'Content-Type': 'application/json; charset=utf-8',
+        });
+        let options = {
+            headers: headers
+        }
+
+        return this.http.put(this.server + file, JSON.stringify(body), options)
+            .timeout(59000) // 59 Detik timeout
+            .map(res => res);
+    }
 }

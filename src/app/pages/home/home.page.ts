@@ -45,7 +45,7 @@ export class HomePage implements OnInit {
     } else {
       this.greeting = 'Malam ';
     }
-    this.storage.get('storage_xxx').then((res) => {
+    this.storage.get('client_info').then((res) => {
       console.log(res);
       this.dataStorage = res;
       this.profilePicture = "https://www.gravatar.com/avatar/" + Md5.hashStr(this.dataStorage.email);
