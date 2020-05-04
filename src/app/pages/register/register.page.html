@@ -20,39 +20,39 @@
         <ion-card-content>
 
           <ion-item lines="none">
-            <ion-label position="stacked">Nama Depan</ion-label>
-            <ion-input type="text" placeholder="Nama Depan" name="first_name" [(ngModel)]="first_name"></ion-input>
-          </ion-item>
-          
-          <ion-item lines="none">
-            <ion-label position="stacked">Nama Belakang</ion-label>
-            <ion-input type="text" placeholder="Nama Belakang" name="last_name" [(ngModel)]="last_name"></ion-input>
+            <ion-label position="floating">Nama Depan</ion-label>
+            <ion-input type="text" name="first_name" [(ngModel)]="first_name"></ion-input>
           </ion-item>
 
           <ion-item lines="none">
-            <ion-label position="stacked">Identitas (NIM/KTP/Passport)</ion-label>
-            <ion-input type="text" placeholder="Identitas" name="identity" [(ngModel)]="identity"></ion-input>
+            <ion-label position="floating">Nama Belakang</ion-label>
+            <ion-input type="text" name="last_name" [(ngModel)]="last_name"></ion-input>
           </ion-item>
 
           <ion-item lines="none">
-            <ion-label position="stacked">Email</ion-label>
-            <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="email"></ion-input>
+            <ion-label position="floating">Identitas (NIM/KTP/Passport)</ion-label>
+            <ion-input type="text" name="identity" [(ngModel)]="identity"></ion-input>
           </ion-item>
 
           <ion-item lines="none">
-            <ion-label position="stacked">Nomor Hp</ion-label>
-            <ion-input type="text" placeholder="Nomor Hp" name="phone" [(ngModel)]="phone"></ion-input>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" name="email" [(ngModel)]="email"></ion-input>
           </ion-item>
 
           <ion-item lines="none">
-            <ion-label position="stacked">Kata Sandi</ion-label>
-            <ion-input type="password" placeholder="Kata Sandi" name="password" [(ngModel)]="password">
+            <ion-label position="floating">Nomor Hp</ion-label>
+            <ion-input type="text" name="phone" [(ngModel)]="phone"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-label position="floating">Kata Sandi</ion-label>
+            <ion-input type="password" name="password" [(ngModel)]="password">
             </ion-input>
           </ion-item>
 
           <ion-item lines="none">
-            <ion-label position="stacked">Konfrimasi Kata Sandi</ion-label>
-            <ion-input type="password" placeholder="Konfrimasi Kata Sandi" name="password" [(ngModel)]="c_password">
+            <ion-label position="floating">Konfrimasi Kata Sandi</ion-label>
+            <ion-input type="password" name="password" [(ngModel)]="c_password">
             </ion-input>
           </ion-item>
 
@@ -62,21 +62,4 @@
 
     </ion-col>
   </ion-row>
-  <!-- <ion-list>
-    <div>
-      <ion-item>
-        <ion-input type="text" placeholder="Nama" [(ngModel)]="name"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input type="email" placeholder="Email" [(ngModel)]="email"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input type="password" placeholder="Confirm Password" [(ngModel)]="c_password"></ion-input>
-      </ion-item>
-      <ion-button expand="full" class="ion-padding" (click)="tryRegister()">Daftar</ion-button>
-    </div>
-  </ion-list> -->
 </ion-content>

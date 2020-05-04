@@ -37,13 +37,13 @@ export class HomePage implements OnInit {
 
   ionViewDidEnter() {
     if (this.now < '11:00:00 AM') {
-      this.greeting = 'Pagi ';
-    } else if (this.now < '4:00:00 PM') {
-      this.greeting = 'Siang ';
-    } else if (this.now < '8:00:00 PM') {
-      this.greeting = 'Sore ';
+      this.greeting = 'Pagi';
+    } else if (this.now < '04:00:00 PM') {
+      this.greeting = 'Siang';
+    } else if (this.now < '08:00:00 PM') {
+      this.greeting = 'Sore';
     } else {
-      this.greeting = 'Malam ';
+      this.greeting = 'Malam';
     }
     this.storage.get('client_info').then((res) => {
       console.log(res);
