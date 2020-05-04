@@ -17,7 +17,7 @@ export class HomePage implements OnInit {
   name: string;
   public now: any = new Date().toLocaleTimeString();
   greeting: string = "Bersemangat";
-  profilePicture: any = "https://www.gravatar.com/avatar/" + Md5.hashStr('vonsogt18081999@gmail.com');;
+  profilePicture: any = "";
 
   constructor(
     private router: Router,
@@ -46,8 +46,9 @@ export class HomePage implements OnInit {
       this.greeting = 'Malam ';
     }
     this.storage.get('storage_xxx').then((res) => {
-      // console.log(res);
+      console.log(res);
       this.dataStorage = res;
+      this.profilePicture = "https://www.gravatar.com/avatar/" + Md5.hashStr(this.dataStorage.email);
       this.name = this.dataStorage.first_name + ' ' + this.dataStorage.last_name;
       this.dataStorage.greeting = this.greeting;
     });

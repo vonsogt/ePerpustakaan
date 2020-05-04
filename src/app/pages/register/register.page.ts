@@ -10,8 +10,11 @@ import { AccessProviders } from '../../providers/access-providers';
 })
 export class RegisterPage implements OnInit {
 
-  name: string = "";
+  first_name: string = "";
+  last_name: string = "";
+  identity: string = "";
   email: string = "";
+  phone: string = "";
   password: string = "";
   c_password: string = "";
 
@@ -33,10 +36,16 @@ export class RegisterPage implements OnInit {
   }
 
   async tryRegister() {
-    if (this.name == "") {
-      this.presentToast('Nama harus diisi.')
+    if (this.first_name == "") {
+      this.presentToast('Nama depan harus diisi.')
+    } else if (this.last_name == "") {
+      this.presentToast('Nama belakang harus diisi.')
+    } else if (this.identity == "") {
+      this.presentToast('Identitas harus diisi.')
     } else if (this.email == "") {
       this.presentToast('Email harus diisi.')
+    } else if (this.phone == "") {
+      this.presentToast('Nomor hp harus diisi.')
     } else if (this.password == "") {
       this.presentToast('Password harus diisi.')
     } else if (this.c_password == "") {
@@ -50,9 +59,11 @@ export class RegisterPage implements OnInit {
 
       return new Promise(resolve => {
         let body = {
-          // action: 'process_register',
-          name: this.name,
+          first_name: this.first_name,
+          last_name: this.last_name,
+          identity: this.identity,
           email: this.email,
+          phone: this.phone,
           password: this.password,
           c_password: this.c_password
         }
@@ -71,7 +82,7 @@ export class RegisterPage implements OnInit {
         }, (err) => {
           loader.dismiss();
           this.disableButton = false;
-          this.presentAlert('Timeout/Unauthorized');
+          this.presentAlert('Timeout');
         });
       });
     }
