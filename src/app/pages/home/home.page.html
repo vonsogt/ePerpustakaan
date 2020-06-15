@@ -13,13 +13,36 @@
       <ion-icon name="person-circle-outline" slot="start"></ion-icon>
       <ion-button fill="outline" routerLink="/profile/update" slot="end">Ubah</ion-button>
     </ion-item>
-  
+
     <img class="profile-photo" [src]="profilePicture" />
     <ion-card-header>
       <ion-card-subtitle class="profile-greeting">Selamat {{ greeting }}</ion-card-subtitle>
       <ion-card-title class="profile-name">{{ name }}</ion-card-title>
     </ion-card-header>
   </ion-card>
-  <ion-text><h2 class="recently_borrowed">BARU SAJA DIPINJAM</h2></ion-text>
-  <ion-text><h6 class="recently_borrowed">Belum ada!</h6></ion-text>
+  <ion-text>
+    <h2 class="recently_borrowed">BARU SAJA DIPINJAM</h2>
+  </ion-text>
+  <ion-text>
+    <h6 class="recently_borrowed">Belum ada!</h6>
+  </ion-text>
+  <ion-grid fixed>
+    <ion-row>
+      <!-- xs, sm, md, lg, xl -->
+      <ion-col size="12" size-xs="12" size-sm="6" size-md="4" size-lg="3" *ngFor="let item of [].constructor(10)">
+        <ion-card>
+          <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
+          <ion-card-header>
+            <ion-card-subtitle>Destination</ion-card-subtitle>
+            <ion-card-title>Madison, WI</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the
+            Wisconsin
+            Territory in 1836.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

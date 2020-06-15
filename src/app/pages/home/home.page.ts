@@ -36,11 +36,12 @@ export class HomePage implements OnInit {
   }
 
   ionViewDidEnter() {
+    console.log(this.now);
     if (this.now < '11:00:00 AM') {
       this.greeting = 'Pagi';
-    } else if (this.now < '04:00:00 PM') {
+    } else if (this.now > '11:00:00 AM' || this.now < '04:00:00 PM') {
       this.greeting = 'Siang';
-    } else if (this.now < '08:00:00 PM') {
+    } else if (this.now > '04:00:00 PM' || this.now < '08:00:00 PM') {
       this.greeting = 'Sore';
     } else {
       this.greeting = 'Malam';
