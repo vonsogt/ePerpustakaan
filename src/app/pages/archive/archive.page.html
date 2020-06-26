@@ -1,33 +1,18 @@
-<ion-header no-border>
+<ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button color="dark"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Dasbor | ePerpustakaan</ion-title>
+    <ion-title>Aktifitas | ePerpustakaan</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <ion-card>
-    <ion-item>
-      <ion-icon name="person-circle-outline" slot="start"></ion-icon>
-      <ion-button fill="outline" routerLink="/profile/update" slot="end">Ubah</ion-button>
-    </ion-item>
-
-    <img class="profile-photo" [src]="profilePicture" />
-    <ion-card-header>
-      <ion-card-subtitle class="profile-greeting">Selamat {{ greeting }}</ion-card-subtitle>
-      <ion-card-title class="profile-name">{{ name }}</ion-card-title>
-    </ion-card-header>
-  </ion-card>
-  <ion-text>
-    <h2 class="recently_borrowed">BARU SAJA DIPINJAM</h2>
-  </ion-text>
-
-  <ion-text *ngIf="dataListLength === 0">
-    <h6 class="recently_borrowed">Belum ada!</h6>
-  </ion-text>
+<ion-content>
   <ion-list>
+    <ion-list-header>
+      Aktifitas Peminjaman
+    </ion-list-header>
+
     <ion-virtual-scroll [items]="dataList">
       <ion-item *virtualItem="let item">
         <!-- <ion-avatar slot="start">
@@ -41,10 +26,8 @@
           <h2>{{item.title}}</h2>
           <p>Deskripsi</p>
         </ion-label>
-        <ion-button (click)="returnBook(item.id)" expand="block" [color]="item.event? 'primary' : 'warning'"
-          [disabled]="!item.event">
-          <ion-text *ngIf="item.event === 1">KEMBALIKAN</ion-text>
-          <ion-text *ngIf="item.event === 0">PENDING</ion-text>
+        <ion-button (click)="returnBook(item.id)" expand="block" color="danger" disabled>
+          SELESAI
         </ion-button>
         <!-- <ion-text color="secondary">
           <small>{{item.updated_at}}</small>
@@ -61,5 +44,4 @@
     <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
-
 </ion-content>

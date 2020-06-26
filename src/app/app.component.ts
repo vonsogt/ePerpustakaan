@@ -25,17 +25,17 @@ export class AppComponent {
     },
     {
       title: 'Daftar Buku',
-      url: '/list-buku',
+      url: '/books',
       icon: 'book'
     },
     {
       title: 'Aktivitas',
-      url: '/Aktivitas',
+      url: '/archive',
       icon: 'receipt'
     },
     {
       title: 'Tentang',
-      url: '/folder/Tentang',
+      url: '/about',
       icon: 'information-circle'
     },
   ];

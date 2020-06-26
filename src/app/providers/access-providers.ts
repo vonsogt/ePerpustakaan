@@ -46,4 +46,8 @@ export class AccessProviders {
             .timeout(59000) // 59 Detik timeout
             .map(res => res);
     }
+
+    get(query: string = ''){
+        return this.http.get(this.server + query);
+    }
 }

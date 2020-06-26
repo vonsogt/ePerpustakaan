@@ -30,7 +30,19 @@ const routes: Routes = [
   {
     path: 'profile/update',
     loadChildren: () => import('./pages/profile/update/update.module').then( m => m.UpdatePageModule)
+  },  {
+    path: 'about',
+    loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
+  },
+  {
+    path: 'archive',
+    loadChildren: () => import('./pages/archive/archive.module').then( m => m.ArchivePageModule)
+  },
+  {
+    path: 'books',
+    loadChildren: () => import('./pages/books/books.module').then( m => m.BooksPageModule)
   }
+
 
 ];
 
