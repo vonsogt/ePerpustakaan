@@ -162,7 +162,7 @@ export class UpdatePage implements OnInit {
     const toast = await this.toastCtrl.create({
       message: a,
       duration: 1500,
-      position: 'top'
+      position: 'bottom'
     });
 
     toast.present();
