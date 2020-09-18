@@ -1,3 +1,11 @@
+ion-content {
+  --background: url("/assets/images/background_shelf.jpg");
+  background-position: center center;
+  background-repeat: repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
 .info-1 {
   font-size: 14px;
   color: #999;

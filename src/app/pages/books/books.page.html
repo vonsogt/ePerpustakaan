@@ -11,9 +11,21 @@
   <div class="ion-padding">
 
     <!-- Theme classes dark, material, bootstrap -->
-    <ngx-datatable class="dark" [limit]="8" [rows]="rows" [rowHeight]="50" [columns]="columns"
-      [columnMode]="'force'" [sortType]="'multi'" [headerHeight]="50" [footerHeight]="50">
+    <ngx-datatable class="dark" [limit]="8" [rows]="rows" [rowHeight]="auto" [columns]="columns" [columnMode]="'force'"
+      [sortType]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="300" [scrollbarV]="true"
+      [scrollbarH]="true">
     </ngx-datatable>
+
+    <ng-template #editTmpl let-row="row" let-value="value">
+      <img width="150" src="{{accsPrvds.server}}{{row.cover}}" />
+    </ng-template>
+
+    <ng-template #editTmpl2 let-row="row" let-value="value">
+      <ion-button (click)="borrowBook(row.id)" color="primary" [disabled]="!row.status">
+        <ion-text *ngIf="row.quantity !== 0">PINJAM</ion-text>
+        <ion-text *ngIf="row.quantity === 0">KOSONG</ion-text>
+      </ion-button>
+    </ng-template>
 
   </div>
 </ion-content>

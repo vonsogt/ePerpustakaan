@@ -1,19 +1,35 @@
-<ion-content>
-  <ion-slides pager="true">
-    <ion-slide class="slide-one">
-      <ion-img src="/assets/images/book.png"></ion-img>
-      <h1>ePerpustakaan</h1>
-      <p class="labelIntro">
-        Aplikasi perpustakaan cross-platform<br/>
-        <span>Membuat perpustakaan bisa diakses dimana saja dengan menggunakan SATU DATABASE saja.</span>
-      </p>
+<ion-content fullscreen class="ion-padding" scroll-y="false">
+  <div class="background-image"></div>
+  <ion-slides>
+
+    <ion-slide>
+      <div class="slide">
+        <img src="assets/images/book2.png" />
+        <h2>Selamat Datang di</h2>
+        <p><b>Aplikasi perpustakaan cross-platform</b>.</p>
+      </div>
     </ion-slide>
-    <ion-slide class="slide-two">
-      <ion-img src="/assets/images/book.png"></ion-img>
-      <p class="labelIntro">
-        Hi, Selamat datang
-      </p>
-      <ion-button (click)="openLogin()">Masuk sekarang!</ion-button>
+<!-- 
+    <ion-slide>
+      <img src="assets/images/slide-2.png" />
+      <h2>What is Ionic?</h2>
+      <p><b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps with web
+        technologies like HTML, CSS, and JavaScript.</p>
     </ion-slide>
+
+    <ion-slide>
+      <img src="assets/images/slide-3.png" />
+      <h2>What is Ionic Appflow?</h2>
+      <p><b>Ionic Appflow</b> is a powerful set of services and features built on top of Ionic Framework that brings a
+        totally new level of app development agility to mobile dev teams.</p>
+    </ion-slide> -->
+
+    <ion-slide>
+      <img src="assets/images/book2.png" />
+      <h2>Sudah siap menggunakan?</h2>
+      <ion-button (click)="openLogin()" fill="clear">Masuk sekarang <ion-icon slot="end" name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-slide>
+
   </ion-slides>
 </ion-content>
